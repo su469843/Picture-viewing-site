@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>照片墙</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="cover">
         <img src="img/by-home.jpg" alt="封面">
+        <div class="cover-content">
+            <h1 class="site-title">的照片墙</h1>
+            <p class="site-desc">记录生活的每一个瞬间</p>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
     <header>
         <nav class="navbar">
-            <div class="logo">照片墙</div>
+            <div class="logo">
+                <i class="fas fa-camera-retro"></i>
+                <span>照片墙</span>
+            </div>
             <a href="https://github.com/su469843" class="github-link" target="_blank">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-                @su469843
+                <i class="fab fa-github"></i>
+                <span>@su469843</span>
             </a>
         </nav>
     </header>
@@ -25,13 +37,15 @@
     <div class="content-wrapper">
         <aside class="file-manager">
             <div class="year-list">
-                <h3>年份选择</h3>
+                <h3><i class="fas fa-calendar-alt"></i> 年份选择</h3>
                 <ul>
-                    <li data-year="2024">2024年</li>
-                    <li data-year="2023">2023年</li>
-                    <li data-year="2022">2022年</li>
-                    <li data-year="2021">2021年</li>
-                    <li data-year="2020">2020年</li>
+                    <li data-year="2026"><i class="fas fa-folder"></i> 2026年</li>
+                    <li data-year="2025"><i class="fas fa-folder"></i> 2025年</li>
+                    <li data-year="2024"><i class="fas fa-folder"></i> 2024年</li>
+                    <li data-year="2023"><i class="fas fa-folder"></i> 2023年</li>
+                    <li data-year="2022"><i class="fas fa-folder"></i> 2022年</li>
+                    <li data-year="2021"><i class="fas fa-folder"></i> 2021年</li>
+                    <li data-year="2020"><i class="fas fa-folder"></i> 2020年</li>
                 </ul>
             </div>
             <div class="image-list">
@@ -42,9 +56,12 @@
         <main>
             <div class="swiper-container main-swiper">
                 <div class="swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <button class="download-current">下载当前图片</button>
+                <div class="swiper-button-next custom-next"></div>
+                <div class="swiper-button-prev custom-prev"></div>
+                <button class="download-current">
+                    <i class="fas fa-download"></i>
+                    <span>下载</span>
+                </button>
             </div>
 
             <div class="swiper-container thumb-swiper">

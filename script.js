@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let mainSwiper = null;
     let thumbSwiper = null;
 
-    // 获取img文件夹中的所有图片
+    // 直接加载图片
     async function loadImages() {
         try {
             // 获取img目录下的所有图片
@@ -14,23 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const doc = parser.parseFromString(files, 'text/html');
             const links = doc.querySelectorAll('a');
             
-            // 过滤出图片文件
+            // 过滤出图片文件（除了封面图片）
             const imageFiles = Array.from(links)
                 .map(link => link.href)
                 .filter(href => href.match(/\.(jpg|jpeg|png|gif)$/i))
                 .filter(href => !href.includes('by-home')); // 排除封面图片
 
             // 添加到轮播
-            imageFiles.forEach(imgPath => {
+            imageFiles.forEach((imgPath, index) => {
                 mainWrapper.innerHTML += `
                     <div class="swiper-slide">
-                        <img src="${imgPath}" alt="照片">
+                        <img src="${imgPath}" alt="照片${index + 1}">
                     </div>
                 `;
 
                 thumbWrapper.innerHTML += `
                     <div class="swiper-slide">
-                        <img src="${imgPath}" alt="照片">
+                        <img src="${imgPath}" alt="照片${index + 1}">
                     </div>
                 `;
             });
@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 加载所有图片
     loadImages();
+
+    // 添加向下滚动功能
+    document.querySelector('.scroll-down').addEventListener('click', function() {
+        const contentWrapper = document.querySelector('.content-wrapper');
+        contentWrapper.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
 // 显示选中的图片
