@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f6fa;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-swiper {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 1rem;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.thumb-swiper {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+}
+
+.thumb-swiper .swiper-slide {
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.thumb-swiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .main-swiper {
+        height: 50vh;
+    }
+    
+    .thumb-swiper {
+        height: 80px;
+    }
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.github-link:hover {
+    opacity: 0.8;
+}
+
+.github-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+}
+
+/* 封面样式 */
+.cover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-arrow {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 确保主内容区域在封面下方 */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    background-color: #f5f6fa;
+    padding-top: 2rem;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+.file-manager {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.year-list h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.year-list ul {
+    list-style: none;
+}
+
+.year-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.year-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.year-list li.active {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.image-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.image-list img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.image-list img:hover {
+    transform: scale(1.05);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.download-current {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.download-current:hover {
+    background-color: #2980b9;
+}
+  

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片墙</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="cover">
+        <img src="img/by-home.jpg" alt="封面">
+    </section>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">照片墙</div>
+            <a href="https://github.com/su469843" class="github-link" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                @su469843
+            </a>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="file-manager">
+            <div class="year-list">
+                <h3>年份选择</h3>
+                <ul>
+                    <li data-year="2024">2024年</li>
+                    <li data-year="2023">2023年</li>
+                    <li data-year="2022">2022年</li>
+                    <li data-year="2021">2021年</li>
+                    <li data-year="2020">2020年</li>
+                </ul>
+            </div>
+            <div class="image-list">
+                <!-- 图片列表将通过JavaScript动态加载 -->
+            </div>
+        </aside>
+
+        <main>
+            <div class="swiper-container main-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <button class="download-current">下载当前图片</button>
+            </div>
+
+            <div class="swiper-container thumb-swiper">
+                <div class="swiper-wrapper"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
